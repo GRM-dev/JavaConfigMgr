@@ -16,6 +16,7 @@ dependencies {
     compile group: 'org.ini4j', name: 'ini4j', version: '0.5.4'
     compile 'com.google.guava:guava:18.0'
     testCompile 'junit:junit:4.12'
+	testCompile 'org.assertj:assertj-core:3.4.1'
 }
 
 task wrapper(type: Wrapper) {
