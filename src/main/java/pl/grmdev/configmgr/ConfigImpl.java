@@ -1,25 +1,18 @@
 package pl.grmdev.configmgr;
 
-import java.util.HashMap;
-
-import com.google.common.collect.HashMultimap;
-
 import pl.grmdev.configmgr.factory.ConfigFactorySettings;
-import pl.grmdev.configmgr.storage.FileSaveLocation;
-import pl.grmdev.configmgr.storage.SaveLocation;
-import pl.grmdev.configmgr.storage.SaveLocationType;
+import pl.grmdev.configmgr.storage.SaveLocations;
 
 final class ConfigImpl implements Config {
-	private HashMultimap<SaveLocationType, SaveLocation> storageLocations;
+	private SaveLocations saveLocations;
 		
 	ConfigImpl(ConfigFactorySettings settings) {
-		storageLocations = HashMultimap.<SaveLocationType, SaveLocation> create();
+		saveLocations = new SaveLocations();
 		
 	}
 	
-	public HashMap<String, FileSaveLocation> getFileSaveLocations() {
-		
-		return null;
+	public SaveLocations getFileSaveLocations() {
+		return saveLocations.getFiles();
 	}
 	
 }
